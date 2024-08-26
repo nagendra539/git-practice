@@ -33,6 +33,6 @@ then
     VERIFY $? mysql
     
 else
-    echo "package was already ${GREEN}installed ${N}"
+    echo -e "package was already ${GREEN}installed ${N}"
     exit 1
 fi
