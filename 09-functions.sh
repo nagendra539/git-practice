@@ -7,13 +7,15 @@ then
     exit 1
 fi
 
-VERIFY(){
+VERIFY()
+{
     if [ ${1} -ne 0 ]
     then 
         echo "installtion failed..."
         exit 1
     else    
         echo "installation of ${2} passed"
+    fi
 }
 
 dnf list installed  mysql 
