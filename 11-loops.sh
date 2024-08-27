@@ -11,6 +11,7 @@ CHECKROOT(){
         exit 1
     fi
 }
+CHECKROOT
 
 VALIDATE(){
     if [ $1 -ne 0 ]
