@@ -17,6 +17,8 @@ VALIDATE(){
     then    
         echo -e "$2 is not installed, Please check the error"
         exit 1
+    else   
+        echo "$2 is installed successfully"
     fi
 }
 
