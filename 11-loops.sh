@@ -24,7 +24,7 @@ VALIDATE(){
 for package in $@ #it will pass all the arguements  to this loop
 do
     dnf list installed $package
-    if [ $? -eq 0 ]
+    if [ $? -ne 0 ]
     then
         echo -e "$package is not installed, going to install it"
         dnf install $package -y
