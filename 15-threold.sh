@@ -5,8 +5,8 @@ USAGE=5
 
 while IFS= read -r line
 do
-    PARTITION=$(echo "$line" | awk -F " " '{print $1F}'| cut -d "%" -f1)
-    UTILIZATION=$(echo "$line" | awk -F " " '{print $6F}')
+    PARTITION=$(echo "$line" | awk -F " " '{print $1F}')
+    UTILIZATION=$(echo "$line" | awk -F " " '{print $6F}' | cut -d "%" -f1)
     if [ $UTILIZATION -ge $USAGE ]
     then
         echo "$PARTITION : $UTILIZATION"
