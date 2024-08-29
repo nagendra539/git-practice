@@ -28,7 +28,7 @@ fi
 
 FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime ${DAYS})
 
-if [ -n $FILES ]
+if [ ! -z $FILES ] #true if FILES empty
 then    
     echo "files are present ${FILES}"
 else    
