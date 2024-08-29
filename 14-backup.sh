@@ -3,6 +3,7 @@
 SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14} #if $3 is empty, default is 14 
+DATE=$(date +%Y-%m-%d-%H-%M-%S)
 
 USAGE(){
     echo "USAGE: sh 14-backup.sh <source-dir> <dest-dir> <no.of days>"
@@ -27,11 +28,12 @@ then
 fi
 
 FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS})
-echo "Files are : $FILES"
+#echo "Files are : $FILES"
 
 if [ ! -z $FILES ] #true if FILES empty, ! makes it false
 then    
     echo "files are present: $FILES"
+    find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS} | zip ${DEST_DIR}/${DATE}.zip -@
 else    
     echo "files are not there in ${SOURCE_DIR} older than ${DAYS}"
     exit 1
