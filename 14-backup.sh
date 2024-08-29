@@ -32,6 +32,6 @@ if [ -n $FILES ]
 then    
     echo "files are present ${FILES}"
 else    
-    echo "files are not there in ${SOURCE_DIR}"
+    echo "files are not there in ${SOURCE_DIR} older than ${DAYS}"
     exit 1
 fi
