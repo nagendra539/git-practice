@@ -9,6 +9,6 @@ do
     UTILIZATION=$(echo "$line" | awk -F " " '{print $6F}')
     if [ $UTILIZATION -ge $USAGE ]
     then
-        echo "$LINE1 : $LINE2"
+        echo "$PARTITION : $UTILIZATION"
     fi
 done <<< $DISK_USAGE
