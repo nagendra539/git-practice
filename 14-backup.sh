@@ -27,10 +27,11 @@ then
 fi
 
 FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime ${DAYS})
+echo "$FILES"
 
-if [ -z $FILES ] #true if FILES empty
+if [ ! -z $FILES ] #true if FILES empty, ! makes it false
 then    
-    echo "files are present ${FILES}"
+    echo "files are present: $FILES"
 else    
     echo "files are not there in ${SOURCE_DIR} older than ${DAYS}"
     exit 1
