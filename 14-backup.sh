@@ -32,6 +32,10 @@ echo "Files are : $FILES"
 
 find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS} | zip ${DEST_DIR}/${DATE}.zip -@
 
+while IFS= read -r file
+do
+    rm -rf $file
+done <<< $FILES
 # if [ ! -z $FILES ]
 # then
 #     echo "files are present: $FILES"
