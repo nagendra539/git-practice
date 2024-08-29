@@ -14,7 +14,8 @@ fi
 Log_Files=$( find ${LOGS_DIR} -name "*.log"  )
 echo "${Log_Files}"
 
-while IFS= read -r file 
+while IFS= read -r file  # IFS Internal field seperator, empty it will ignore whitespace.
+# -r is not to ignore special characters like /
 do
     echo "delete file: ${file}"
 done <<< ${Log_Files}
