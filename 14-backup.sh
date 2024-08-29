@@ -15,4 +15,23 @@ then
     exit 1
 fi  
 
-LOGS= $(find $1 -name "*.log" -mtime $3)
+if [ ! -d $SOURCE_DIR ]
+then
+    echo "source directory is not present"
+    exit 1
+fi
+if [ ! -d $DEST_DIR ]
+then
+    echo "Destination directory is not present"
+    exit 1
+fi
+
+FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime ${DAYS})
+
+if [ -n FILES ]
+then    
+    echo "files are present"
+else    
+    echo "files are not there in ${SOURCE_DIR}"
+    exit 1
+fi
