@@ -30,7 +30,7 @@ FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime ${DAYS})
 
 if [ -n FILES ]
 then    
-    echo "files are present"
+    echo "files are present ${FILES}"
 else    
     echo "files are not there in ${SOURCE_DIR}"
     exit 1
