@@ -14,7 +14,7 @@ fi
 Log_Files=$( find ${LOGS_DIR} -name "*.log"  )
 echo "${Log_Files}"
 
-while IFS= read -r line 
+while IFS= read -r file 
 do
-    echo "delete file: ${line}"
+    echo "delete file: ${file}"
 done <<< ${Log_Files}
