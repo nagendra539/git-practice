@@ -30,11 +30,13 @@ fi
 FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS})
 echo "Files are : $FILES"
 
-if [ ! -z $FILES ]
-then
-    echo "files are present: $FILES"
-    find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS} | zip ${DEST_DIR}/${DATE}.zip -@
-else    
-    echo "files are not there in ${SOURCE_DIR} older than ${DAYS}"
-    exit 1
-fi
+find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS} | zip ${DEST_DIR}/${DATE}.zip -@
+
+# if [ ! -z $FILES ]
+# then
+#     echo "files are present: $FILES"
+#     find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS} | zip ${DEST_DIR}/${DATE}.zip -@
+# else    
+#     echo "files are not there in ${SOURCE_DIR} older than ${DAYS}"
+#     exit 1
+# fi
