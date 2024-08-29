@@ -26,8 +26,8 @@ then
     exit 1
 fi
 
-FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime ${DAYS})
-echo "$FILES"
+FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS})
+echo "Files are : $FILES"
 
 if [ ! -z $FILES ] #true if FILES empty, ! makes it false
 then    
