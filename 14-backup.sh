@@ -30,7 +30,7 @@ fi
 FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS})
 #echo "Files are : $FILES"
 
-if [ ! -z $FILES ] #true if FILES empty, ! makes it false
+if [ ! -z $FILES ]
 then    
     echo "files are present: $FILES"
     find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS} | zip ${DEST_DIR}/${DATE}.zip -@
