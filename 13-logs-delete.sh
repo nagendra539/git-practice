@@ -17,5 +17,5 @@ echo "${Log_Files}"
 while IFS= read -r file  # IFS Internal field seperator, empty it will ignore whitespace.
 # -r is not to ignore special characters like /
 do
-    echo "delete file: ${file}"
+    echo "delete file: ${file}"  #replace echo with rm -rf $file
 done <<< ${Log_Files}
