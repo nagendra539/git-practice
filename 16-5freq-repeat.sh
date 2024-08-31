@@ -17,5 +17,5 @@ fi
 
 while IFS= read -r line
 do  
-    echo "$line" | tr ' ' '\n' | sort | uniq -c
+    echo "$line" | tr ' ' '\n' | sort | uniq -c | sort -nr
 done <<< $FILE
