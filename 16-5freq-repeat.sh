@@ -6,6 +6,7 @@ then
     exit 1
 fi
 FILE=$(echo "$1")
+echo "${FILE}"
 
 if [ -f $FILE ]
 then    
