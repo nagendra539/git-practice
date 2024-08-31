@@ -14,8 +14,9 @@ else
     echo "File not exists, Please enter the exact file name"
     exit 1
 fi
-
-while IFS= read -r line
-do  
-    echo "$line" | tr ' ' '\n' | sort | uniq -c | sort -nr
-done <<< $FILE
+words=( $FILE )
+echo ${#words[@]}
+# while IFS= read -r line
+# do  
+#     echo "$line" | tr ' ' '\n' | sort | uniq -c | sort -nr
+# done <<< $FILE
