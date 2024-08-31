@@ -5,7 +5,7 @@ then
     echo "Please enter the filename as input"
     exit 1
 fi
-FILE=$1
+FILE=$(echo "$1")
 
 if [ -f $FILE ]
 then    
