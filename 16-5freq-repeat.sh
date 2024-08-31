@@ -17,5 +17,5 @@ fi
 
 while IFS= read -r line
 do  
-    echo "$line"
+    echo "$line" | tr ' ' '\n'
 done <<< $FILE
