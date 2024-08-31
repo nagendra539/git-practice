@@ -6,9 +6,8 @@ then
     exit 1
 fi
 FILE=$(cat "$1")
-echo "${FILE}"
 
-if [ -f $FILE ]
+if [ -f $1 ]
 then    
     echo "File exists"
 else
