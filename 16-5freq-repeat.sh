@@ -17,5 +17,6 @@ FILE=$(cat "$1")
 
 while IFS= read -r line
 do  
-    echo "$line" | tr ' ' '\n' | sort | uniq -c | sort -nr | head -n5
+    occu=$(echo "$line" | tr ' ' '\n' | sort | uniq -c | sort -nr | head -n5)
+    echo "${occu}"
 done <<< $FILE
